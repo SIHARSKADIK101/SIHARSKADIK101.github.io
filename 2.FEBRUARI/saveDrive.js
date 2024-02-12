@@ -23,14 +23,14 @@ function kirim(id) {
     form.addEventListener('submit', e => {
         e.preventDefault()
         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-            Swal.fire({
-                title: 'OK',
-                text: 'BERHASIL DI UPLOAD',
-                icon: 'success'
-            });
+            // Swal.fire({
+            //     title: 'OK',
+            //     text: 'BERHASIL DI UPLOAD',
+            //     icon: 'success'
+            // });
 
-            // .then(response => Swal('OK', 'FILE BERHASIL DI UPLOAD', 'Success', response))
-            // .catch(error => alert('Error!', error.message))
+            .then(response => Swal.fire('OK', 'FILE BERHASIL DI UPLOAD', 'success', response))
+            .catch(error => Swal.fire('OOPPS!', 'EROR NIH', 'error', error.message))
         var status = { STATUS_UPLOAD: document.getElementById("STATUS_UPLOAD-" + id) }
         //    console.log(status);
 
