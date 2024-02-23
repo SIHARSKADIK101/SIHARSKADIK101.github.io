@@ -15,6 +15,8 @@ function allData() {
             <tr>
                 <td>${i + 1}</td>
                 <td>${value.AIRCRAFT}</td>
+                <td>${value.CREW_IP}</td>
+                <td>${value.CREW_SISWA}</td>
                 <td>${value.EXERCISE}</td>
                 <td>${value.PROGRAM}</td>
                 <td>${value.JT_OPS}</td>
@@ -34,6 +36,8 @@ function allData() {
                 <td>
                     <form name="formUpload-" id="formUpload-${value.id}" action="https://script.google.com/macros/s/AKfycbyren902LFhra9PdEY1Dy8snNzf7Bk-UfI-CH54grv6UzfO_77zR6KdCOi07APcAuXeYg/exec" method="post">
                         <input value="${value.AIRCRAFT}" type="hidden" id="AIRCRAFT_" name="AIRCRAFT" required="harus diisi">
+                        <input value="${value.CREW_IP}" type="hidden" id="CREW_IP" name="CREW_IP" required="harus diisi">
+                        <input value="${value.CREW_SISWA}" type="hidden" id="CREW_SISWA" name="CREW_SISWA" required="harus diisi">
                         <input value="${value.EXERCISE}" type="hidden"" id="EXERCISE-" name="EXERCISE" required>
                         <input value="${value.PROGRAM}" type="hidden"" id="PROGRAM-" name="PROGRAM" required>
                         <input value="${value.JT_OPS}" type="hidden"" id="JT_OPS-" name="JT_OPS" required>
@@ -41,6 +45,9 @@ function allData() {
                         <input value="${value.LANDING} "type="hidden"" id="LANDING-" name="LANDING" required>
                         <input value="${value.STATUS_UPLOAD} "type="hidden"" id="STATUS_UPLOAD" name="STATUS_UPLOAD" required>
                             <button type ="hidden" class="btn btn-sm btn-info" name="formId()" onclick="kirim(${value.id})"</button> 
+                            <i class="fa fa-upload"></i>
+                            </button> 
+                            <button type ="hidden" class="fa-solid fa-disc-drive" onclick="cetak(${value.id})"</button> 
                             <i class="fa fa-upload"></i>
                             </button> 
                     </form>                   

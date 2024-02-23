@@ -8,6 +8,8 @@ function find(id){
         if(value.id == id){
            document.getElementById('id').value = value.id
            document.getElementById('AIRCRAFT').value = value.AIRCRAFT
+           document.getElementById('CREW_IP').value = value.CREW_IP
+           document.getElementById('CREW_SISWA').value = value.CREW_SISWA
            document.getElementById('EXERCISE').value = value.EXERCISE
            document.getElementById('PROGRAM').value = value.PROGRAM
            document.getElementById('JT_OPS').value = value.JT_OPS
