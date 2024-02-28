@@ -31,7 +31,7 @@ function kirim(id) {
             .catch(error => Swal.fire('OOPPS!', 'EROR NIH', 'error', error.message))
         var status = { STATUS_UPLOAD: document.getElementById("STATUS_UPLOAD-" + id) }
         //    console.log(status);
-
+        console.log(form);
 
     })
     var array = JSON.parse(localStorage.getItem('listItem'))
