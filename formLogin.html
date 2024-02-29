@@ -171,12 +171,17 @@
             console.log(PASSWORD.value);
 
             if (USERNAME.value == "virga" && PASSWORD.value == "123") {
-                window.location.replace("formMenu.html");
-            } else {
+                window.location.replace("index1.html");
+            } else if (USERNAME.value == "Krisna" && PASSWORD.value == "666") {
+                window.location.replace("index1.html");
+            }
+            else {
                 alert('anda bukan anggota');
                 anggota.style.display = "none";
                 biasa.style.display = "block";
             }
+
+            localStorage.setItem('username', USERNAME.value);
         }
 
     </script>

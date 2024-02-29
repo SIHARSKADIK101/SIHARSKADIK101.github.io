@@ -12,20 +12,22 @@
 </head>
 
 <body class="body">
-    <img src="logo101.png" class="logo101 animate__animated animate__fadeInDown">
+    <!-- <img src="logo101.png" class="logo101 animate__animated animate__fadeInDown"> -->
+    <nav>
+        <div class="card">
+            <div class="card-body">
+                <h2 class="welcome"> PILIH BULAN DAN TANGGAL </h2>
+                <input type="date" class="btn btn-primary" id="datepicker" placeholder="BULAN/TANGGAL"></button>
+                <button type="button" class="btn btn-primary" id="btn3" onclick="btnMulaiEdit()">Mulai Edit</button>
+                <button type="button" class="btn btn-primary" id="btn4" onclick="btnKembali()">Kembali</button>
 
-    <h1 class="welcome"> PILIH BULAN DAN TANGGAL </h1>
-    <div>
-        <input type="date" class="btn btn-warning" id="datepicker" placeholder="BULAN/TANGGAL"></button>
-    </div>
-    <div>
-        <button type="button" class="btn btn-warning" id="btn3" onclick="btnMulaiEdit()">MULAI EDIT</button>
-    </div>
-    <div class="KEMBALI">
-        <button type="button" class="btn btn-warning" id="btn4" onclick="btnKembali()">KEMBALI</button>
-    </div>
+            </div>
+        </div>
+    </nav>
 
-    <style>
+
+
+    <!-- <style>
         .logo101 {
             align-items: center;
             margin-left: 35%;
@@ -134,7 +136,7 @@
 
             }
         
-    </style>
+    </style> -->
 
     <script>
 
@@ -145,7 +147,7 @@
 
         function btnKembali() {
             console.log('aku di klik');
-            window.location.replace("pilihMenu.html");
+            window.location.replace("index1.html");
         }
         function btnMulaiEdit() {
             var date = new Date(document.getElementById("datepicker").value);

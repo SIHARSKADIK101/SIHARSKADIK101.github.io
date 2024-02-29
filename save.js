@@ -14,7 +14,9 @@ function save() {
         //edit contactlist array based on value
         contactList.forEach(value => {
             if (document.getElementById('id').value == value.id) {
-                value.AIRCRAFT = document.getElementById('AIRCRAFT').value,
+                    value.AIRCRAFT = document.getElementById('AIRCRAFT').value,
+                    value.CREW_IP = document.getElementById('CREW_IP').value,
+                    value.CREW_SISWA = document.getElementById('CREW_SISWA').value,
                     value.EXERCISE = document.getElementById('EXERCISE').value,
                     value.PROGRAM = document.getElementById('PROGRAM').value,
                     value.JT_OPS = document.getElementById('JT_OPS').value,
@@ -34,6 +36,8 @@ function save() {
         var item = {
             id: id + 1,
             AIRCRAFT: document.getElementById('AIRCRAFT').value,
+            CREW_IP: document.getElementById('CREW_IP').value,
+            CREW_SISWA: document.getElementById('CREW_SISWA').value,
             EXERCISE: document.getElementById('EXERCISE').value,
             PROGRAM: document.getElementById('PROGRAM').value,
             JT_OPS: document.getElementById('JT_OPS').value,

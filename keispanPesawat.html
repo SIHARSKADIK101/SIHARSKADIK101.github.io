@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAPORAN PENCAPAIAN BULANAN</title>
+</head>
+<body>
+    <h1>LAPORAN PENGGUNAAN JAM TERBANG PESAWAT G120TP-A GROB</h1>
+<div class="container">
+    <table class="table" border="3">
+      <thead>
+        <tr>
+          <th rowspan="2">KEGIATAN</th>
+          <th colspan="2">ALOKASI</th>
+          <th colspan="2">BULAN INI</th>
+          <th colspan="2">BULAN LALU</th>
+          <th colspan="2">JUMLAH</th>
+          <th rowspan="2">%</th>
+        </tr>
+        <tr>
+            <th>SORTIES</th>
+            <th>J.T</th>
+            <th>SORTIES</th>
+            <th>J.T</th>
+            <th>SORTIES</th>
+            <th>J.T</th>
+            <th>SORTIES</th>
+            <th>J.T</th>
+            
+          </tr>
+      </thead>
+      <tbody id="data">
+  
+      </tbody>
+    </table>
+  </div>
+
+    <script>
+            let date = new Date()
+            var jam = date.getHours;
+            list = [];
+            const url = 'https://script.google.com/macros/s/AKfycbzwy_emSLkccTN2QugA6kk-0VUYMcFDIYYuCmKDHy1zI5eTSNaBRRBNs1HckSZvA64Z/exec';
+            // const data = JSON.parse(localStorage.setItem,(url, item)) ??[];
+            fetch(url).then(
+            res => {
+                res.json().then(
+                    data => {
+                        console.log(data.content);
+                        if (data.content.length > 0) {
+                            var temp = "";
+                            data.content.forEach((item) => {
+                                temp += "<tr>";
+                                temp += "<td>" + item[0] + "</td>";
+                                temp += "<td>" + item[1] + "</td>";
+                                temp += "<td>" + item[2] + "</td>";
+                                temp += "<td>" + item[3] + "</td>";
+                                temp += "<td>" + item[4] + "</td>";
+                                temp += "<td>" + item[5] + "</td>";
+                                temp += "<td>" + item[6] + "</td>";
+                                temp += "<td>" + item[7] + "</td>";
+                                temp += "<td>" + item[8] + "</td>";
+                                temp += "<td>" + item[9] + "</td>";
+                                // temp += "<td>" + item[10] + "</td>";
+                                // temp += "<td>" + item[11] + "</td>";
+                                // temp += "<td>" + item[12] + "</td>";
+                                // temp += "<td>" + item[13] + "</td>";
+                                // temp += "<td>" + item[14] + "</td>";
+                                // temp += "<td>" + item[15] + "</td>";
+                                // temp += "<td>" + item[16] + "</td>";
+                                // temp += "<td>" + item[17] + "</td>";
+                                // temp += "<td>" + item[18] + "</td>";
+                                // temp += "<td>" + item[19] + "</td>";
+                                // temp += "<td>" + item[20] + "</td>";
+                                // temp += "<td>" + item[21] + "</td>";
+                                // temp += "<td>" + item[22] + "</td>";
+                                // temp += "<td>" + item[22] + "</td>";
+                                // temp += "<td>" + item[23] + "</td>";
+                                // temp += "<td>" + item[24] + "</td>";
+                                // temp += "<td>" + item[25] + "</td>";
+                                // temp += "<td>" + item[26] + "</td>";
+                                // temp += "<td>" + item[27] + "</td>";
+                                // temp += "<td>" + item[28] + "</td>";
+                                // temp += "<td>" + item[29] + "</td>";
+                                // temp += "<td>" + item[30] + "</td>";
+                                // temp += "<td>" + item[31] + "</td>";
+                                // temp += "<td>" + item[32] + "</td>";
+                                // temp += "<td>" + item[33] + "</td>";
+                                // temp += "<td>" + item[34] + "</td>";
+                                // temp += "<td>" + item[35] + "</td>";
+                                // temp += "<td>" + item[36] + "</td>";
+                                // temp += "<td>" + item[37] + "</td>";
+                                // temp += "<td>" + item[38] + "</td>";
+                                // temp += "<td>" + item[39] + "</td>";
+                                // temp += "<td>" + item[40] + "</td>";
+                                // temp += "<td>" + item[41] + "</td>";
+                                // temp += "<td>" + item[42] + "</td>";
+                                // temp += "<td>" + item[43] + "</td>";
+                                // temp += "<td>" + item[44] + "</td>";
+                                // temp += "<td>" + item[45] + "</td>";
+                                // temp += "<td>" + item[46] + "</td>";
+                                // temp += "<td>" + item[47] + "</td>";
+                                // temp += "<td>" + item[48] + "</td>";
+                                // temp += "<td>" + item[49] + "</td>";
+                                // temp += "<td>" + item[50] + "</td>";
+                                // temp += "<td>" + item[51] + "</td>";
+                                // temp += "<td>" + item[52] + "</td>";
+                                // temp += "<td>" + item[53] + "</td>";
+                                // temp += "<td>" + item[54] + "</td>";
+                                // temp += "<td>" + item[55] + "</td>";
+                                
+                            });
+                            document.getElementById('data').innerHTML = temp;
+                        }
+                    }
+                )
+            }
+            )
+            // .then ((response => response.json()))
+            // .then (data => console.log(data))
+
+
+            //     .then((response => response.json()))
+            //     .then((data) => {
+            //         let no = 1;
+            //         let output = ``;
+            //         list.forEach(el => {
+            //             output +=`
+            //             <tr>
+            //                 <td>` + (no++) +`</td>
+            //                 <td>$el{list[0]}</td>
+            //                 <td>$el{list[1]}</td>
+            //             </tr>
+            //             `
+            //         });
+            //         document.querySelector('tbody').innerHTML = output  
+            // })
+        
+    </script>
+
+    </script>
+
+</body>
+
+</html>

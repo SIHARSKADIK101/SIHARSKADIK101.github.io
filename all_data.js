@@ -15,6 +15,8 @@ function allData() {
             <tr>
                 <td>${i + 1}</td>
                 <td>${value.AIRCRAFT}</td>
+                <td>${value.CREW_IP}</td>
+                <td>${value.CREW_SISWA}</td>
                 <td>${value.EXERCISE}</td>
                 <td>${value.PROGRAM}</td>
                 <td>${value.JT_OPS}</td>
