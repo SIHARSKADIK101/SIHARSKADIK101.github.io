@@ -12,22 +12,24 @@
     <table class="table" border="3">
       <thead>
         <tr>
-          <th rowspan="2">KEGIATAN</th>
-          <th colspan="2">ALOKASI</th>
-          <th colspan="2">BULAN INI</th>
-          <th colspan="2">BULAN LALU</th>
-          <th colspan="2">JUMLAH</th>
-          <th rowspan="2">%</th>
+          <th rowspan="2">TAIL NUMB</th>
+          <th colspan="3">USIA</th>
+          <th rowspan="2">JAM TRB</th>
+          <th rowspan="2">JML LND</th>
+          <th rowspan="2">CYC ENG</th>
+          <th rowspan="2">PI YAD</th>
+          <th rowspan="2">SISA JAM</th>
+          <th colspan="2">KONDISI</th>
+          <th rowspan="2">JENIS HAR</th>
+          <th rowspan="2">KET</th>
+          
         </tr>
         <tr>
-            <th>SORTIES</th>
-            <th>J.T</th>
-            <th>SORTIES</th>
-            <th>J.T</th>
-            <th>SORTIES</th>
-            <th>J.T</th>
-            <th>SORTIES</th>
-            <th>J.T</th>
+            <th>AIRFRAME</th>
+            <th>ENGINE</th>
+            <th>PROPELLER</th>
+            <th>S</th>
+            <th>US</th>
             
           </tr>
       </thead>
@@ -41,7 +43,7 @@
             let date = new Date()
             var jam = date.getHours;
             list = [];
-            const url = 'https://script.google.com/macros/s/AKfycbzwy_emSLkccTN2QugA6kk-0VUYMcFDIYYuCmKDHy1zI5eTSNaBRRBNs1HckSZvA64Z/exec';
+            const url = 'https://script.google.com/macros/s/AKfycbw6qIAUJ0wiVWPdKf9CLuVNCNOpI0FMjznlIk-pNtK7NHkEn_KVHoDPgdBsseLu1IZ1/exec';
             // const data = JSON.parse(localStorage.setItem,(url, item)) ??[];
             fetch(url).then(
             res => {
@@ -62,15 +64,15 @@
                                 temp += "<td>" + item[7] + "</td>";
                                 temp += "<td>" + item[8] + "</td>";
                                 temp += "<td>" + item[9] + "</td>";
-                                // temp += "<td>" + item[10] + "</td>";
-                                // temp += "<td>" + item[11] + "</td>";
-                                // temp += "<td>" + item[12] + "</td>";
-                                // temp += "<td>" + item[13] + "</td>";
-                                // temp += "<td>" + item[14] + "</td>";
-                                // temp += "<td>" + item[15] + "</td>";
-                                // temp += "<td>" + item[16] + "</td>";
-                                // temp += "<td>" + item[17] + "</td>";
-                                // temp += "<td>" + item[18] + "</td>";
+                                temp += "<td>" + item[10] + "</td>";
+                                temp += "<td>" + item[11] + "</td>";
+                                temp += "<td>" + item[12] + "</td>";
+                                temp += "<td>" + item[13] + "</td>";
+                                temp += "<td>" + item[14] + "</td>";
+                                temp += "<td>" + item[15] + "</td>";
+                                temp += "<td>" + item[16] + "</td>";
+                                temp += "<td>" + item[17] + "</td>";
+                                temp += "<td>" + item[18] + "</td>";
                                 // temp += "<td>" + item[19] + "</td>";
                                 // temp += "<td>" + item[20] + "</td>";
                                 // temp += "<td>" + item[21] + "</td>";
