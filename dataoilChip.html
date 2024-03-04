@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAPORAN PENCAPAIAN BULANAN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 20%;
+            background-color: #f1f1f1;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        li a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+    </style>
+    </head>
+
+    <body>
+        <ul>
+            <img id="logo" src="logo101.png" width="70px" aliign="text-center"><br>
+            <a id="welcome">SELAMAT DATANG.... </a>
+            <script>
+                const username = localStorage.getItem('username');
+                document.getElementById('welcome').innerHTML = "Selamat Datang" + " " + username;
+                console.log(username);
+
+            </script>
+            <BR></BR>
+            <div>
+                <li><a class="active" href="/index1.html">MENU</a></li>
+                <li><a href="pilihTanggal.html">INPUT JAM TERBANG</a></li>
+                <li><a href="keispanPesawat.html">KESIAPAN PESAWAT</a></li>
+                <li><a>
+                        <select class="form-select form-select-sm "
+                            onChange="document.location.href=this.options[this.selectedIndex].value;">
+                            <Option value="" disabled selected hidden class="form-control"> RECORD JT IP </Option>
+                            <option
+                                value="https://docs.google.com/spreadsheets/d/1Qgc2r_VSOX4eLJWc8PuEXd8EgBdW7963rDj5IKP-PGs/edit">
+                                RECORD JT IP GROB</option>
+                            <option
+                                value="https://docs.google.com/spreadsheets/d/1smhNZ3NaAmW908Cxw7gFauSwezHILdukt2IInfMi7bM/edit">
+                                RECORD JT IP CESSNA SERIES</option>
+                        </select>
+                    </a></li>
+                <li><a>
+                        <select class="form-select form-select-sm"
+                            onChange="document.location.href=this.options[this.selectedIndex].value;">
+                            <Option value="" disabled selected hidden class="form-control"> DAFTAR KOMPONEN TCI
+                            </Option>
+                            <option value=""> AIRFRAME</option>
+                            <option value=""> ENGINE</option>
+                            <option value=""> PROPELLER</option>
+                            <option value=""> STARTER GENEERATOR</option>
+                            <option value=""> ENGINE</option>
+                            <option value=""> ENGINE</option>
+                            <option value=""> ENGINE</option>
+                            <option value=""> ENGINE</option>
+                        </select>
+                    </a>
+                </li>
+                <li><a>
+                        <select class="form-select form-select-sm"
+                            onChange="document.location.href=this.options[this.selectedIndex].value;">
+                            <Option value="" disabled selected hidden class="form-control"> TROUBLE PESAWAT </Option>
+                            <option value="dataOilChip.html"> RIWAYAT OIL CHIP</option>
+                            <option href="oilChip.html">TROUBLE HARIAN</option>
+                        </select>
+                    </a></li>
+                <li><a href="formLogin1.html">LOGOUT</a></li>
+        </ul>
+        </div>
+
+        <div style="margin-left:20%; padding:1px 16px;height:1000px;">
+            <!-- <h1 style="align-items: center;">INPUT JAM TERBANG</h1>
+    <h3 id="tanggal">TANGGAL</h3> -->
+
+            <script>
+
+                var tanggalan = new Date();
+                document.getElementById('tanggal').innerHTML = "Tanggal" + " " + tanggalan.getDate() + "- " + tanggalan.getMonth() + "- " + tanggalan.getFullYear();
+                console.log(tanggalan)
+
+
+            </script>
+            <h1 style="align-items: center;">RIWAYAT TROUBLE OIL CHIP</h1>
+            <input type="text" name="" id="cariKat" onkeyup="prosesMenu()" placeholder="Cari Disini...">
+            <br>
+            <br>
+            </script>
+
+
+            <table class="table table-striped">
+                <thead id="tabel">
+                    <tr>
+                        <th>TANGGAL</th>
+                        <th>AIRCRAFT</th>
+                        <th>KEJADIAN</th>
+                        <th>USIA AIRFRAME</th>
+                        <th>USIA ENGINE</th>
+                        <th>USIA PROPELLER</th>
+                        <th>OIL SUMP PRGB</th>
+                        <th>REGULATOR HOUSING</th>
+                        <th>ACC GEAR BOX</th>
+                    </tr>
+                </thead>
+                <tbody id="data">
+            </table>
+            <div class="container">
+                <table class="table" border="1">
+                    </tbody>
+                </table>
+            </div>
+            <script>
+                function prosesMenu() {
+                    var input = document.getElementById("cariKat");
+                    var filter = input.value.toLowerCase();
+                    var data_ = data.content;
+                    var tr = document.querySelectorAll("tr")
+                    console.log(tr)
+                    for (var i = 0; i < tr.length; i++) {
+                        var td = document.querySelectorAll("td")[i];
+                        if (td.innerHTML.indexOf(filter) > -1) {
+                            td[i].style.display = "";
+                        } else {
+                            td[i].style.display = "none";
+                        }
+                    }
+                }
+                let date = new Date()
+                var jam = date.getHours;
+                list = [];
+                const url = 'https://script.google.com/macros/s/AKfycbyjPzkvTW04BYzN5bR0QYIH3X37qCOdRnkRUUvioqFcQRewwat7l6retjwZfwQDXcev/exec';
+                // const data = JSON.parse(localStorage.setItem,(url, item)) ??[];
+                fetch(url).then(
+                    res => {
+                        res.json().then(
+                            data => {
+                                console.log(data.content);
+                                if (data.content.length > 0) {
+                                    var temp = "";
+                                    data.content.forEach((item) => {
+                                        temp += "<tr>";
+                                        temp += "<td>" + item[0] + "</td>";
+                                        temp += "<td>" + item[1] + "</td>";
+                                        temp += "<td>" + item[2] + "</td>";
+                                        temp += "<td>" + item[3] + "</td>";
+                                        temp += "<td>" + item[4] + "</td>";
+                                        temp += "<td>" + item[5] + "</td>";
+                                        temp += "<td>" + item[6] + "</td>";
+                                        temp += "<td>" + item[7] + "</td>";
+                                        temp += "<td>" + item[8] + "</td>";
+                                        temp += "<td>" + item[9] + "</td>";
+                                        temp += "<td>" + item[10] + "</td>";
+                                        // temp += "<td>" + item[11] + "</td>";
+                                        // temp += "<td>" + item[12] + "</td>";
+                                        // temp += "<td>" + item[13] + "</td>";
+                                        // temp += "<td>" + item[14] + "</td>";
+                                        // temp += "<td>" + item[15] + "</td>";
+                                        // temp += "<td>" + item[16] + "</td>";
+                                        // temp += "<td>" + item[17] + "</td>";
+                                        // temp += "<td>" + item[18] + "</td>";
+                                        // temp += "<td>" + item[19] + "</td>";
+                                        // temp += "<td>" + item[20] + "</td>";
+                                        // temp += "<td>" + item[21] + "</td>";
+                                        // temp += "<td>" + item[22] + "</td>";
+                                        // temp += "<td>" + item[22] + "</td>";
+                                        // temp += "<td>" + item[23] + "</td>";
+                                        // temp += "<td>" + item[24] + "</td>";
+                                        // temp += "<td>" + item[25] + "</td>";
+                                        // temp += "<td>" + item[26] + "</td>";
+                                        // temp += "<td>" + item[27] + "</td>";
+                                        // temp += "<td>" + item[28] + "</td>";
+                                        // temp += "<td>" + item[29] + "</td>";
+                                        // temp += "<td>" + item[30] + "</td>";
+                                        // temp += "<td>" + item[31] + "</td>";
+                                        // temp += "<td>" + item[32] + "</td>";
+                                        // temp += "<td>" + item[33] + "</td>";
+                                        // temp += "<td>" + item[34] + "</td>";
+                                        // temp += "<td>" + item[35] + "</td>";
+                                        // temp += "<td>" + item[36] + "</td>";
+                                        // temp += "<td>" + item[37] + "</td>";
+                                        // temp += "<td>" + item[38] + "</td>";
+                                        // temp += "<td>" + item[39] + "</td>";
+                                        // temp += "<td>" + item[40] + "</td>";
+                                        // temp += "<td>" + item[41] + "</td>";
+                                        // temp += "<td>" + item[42] + "</td>";
+                                        // temp += "<td>" + item[43] + "</td>";
+                                        // temp += "<td>" + item[44] + "</td>";
+                                        // temp += "<td>" + item[45] + "</td>";
+                                        // temp += "<td>" + item[46] + "</td>";
+                                        // temp += "<td>" + item[47] + "</td>";
+                                        // temp += "<td>" + item[48] + "</td>";
+                                        // temp += "<td>" + item[49] + "</td>";
+                                        // temp += "<td>" + item[50] + "</td>";
+                                        // temp += "<td>" + item[51] + "</td>";
+                                        // temp += "<td>" + item[52] + "</td>";
+                                        // temp += "<td>" + item[53] + "</td>";
+                                        // temp += "<td>" + item[54] + "</td>";
+                                        // temp += "<td>" + item[55] + "</td>";
+                                    });
+                                    document.getElementById('data').innerHTML = temp;
+                                }
+                            }
+                        )
+                    }
+                )
+                // .then ((response => response.json()))
+                // .then (data => console.log(data))
+
+
+                //     .then((response => response.json()))
+                //     .then((data) => {
+                //         let no = 1;
+                //         let output = ``;
+                //         list.forEach(el => {
+                //             output +=`
+                //             <tr>
+                //                 <td>` + (no++) +`</td>
+                //                 <td>$el{list[0]}</td>
+                //                 <td>$el{list[1]}</td>
+                //             </tr>
+                //             `
+                //         });
+                //         document.querySelector('tbody').innerHTML = output
+                // })
+
+            </script>
+
+            </script>
+
+    </body>
+
+</html>

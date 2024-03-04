@@ -12,22 +12,124 @@
 </head>
 
 <body class="body">
-    <!-- <img src="logo101.png" class="logo101 animate__animated animate__fadeInDown"> -->
-    <nav>
-        <div class="card">
-            <div class="card-body">
-                <h2 class="welcome"> PILIH BULAN DAN TANGGAL </h2>
-                <input type="date" class="btn btn-primary" id="datepicker" placeholder="BULAN/TANGGAL"></button>
-                <button type="button" class="btn btn-primary" id="btn3" onclick="btnMulaiEdit()">Mulai Edit</button>
-                <button type="button" class="btn btn-primary" id="btn4" onclick="btnKembali()">Kembali</button>
+    <style>
+        body {
+            margin: 0;
+        }
 
-            </div>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 20%;
+            background-color: #f1f1f1;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        li a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+    </style>
+    </head>
+
+    <body>
+        <ul>
+            <img id="logo" src="logo101.png" width="70px" aliign="text-center"><br>
+            <a id="welcome">SELAMAT DATANG.... </a>
+            <script>
+                const username = localStorage.getItem('username');
+                document.getElementById('welcome').innerHTML = "Selamat Datang" + " " + username;
+                console.log(username);
+
+            </script>
+            <BR></BR>
+            <div>
+                <li><a class="active" href="index1.html">MENU</a></li>
+                <li><a href="pilihTanggal.html">INPUT JAM TERBANG</a></li>
+                <li><a href="keispanPesawat.html">KESIAPAN PESAWAT</a></li>
+                <li><a>
+                        <select class="form-select form-select-sm "
+                            onChange="document.location.href=this.options[this.selectedIndex].value;">
+                            <Option value="" disabled selected hidden class="form-control"> RECORD JT IP </Option>
+                            <option
+                                value="https://docs.google.com/spreadsheets/d/1Qgc2r_VSOX4eLJWc8PuEXd8EgBdW7963rDj5IKP-PGs/edit">
+                                RECORD JT IP GROB</option>
+                            <option
+                                value="https://docs.google.com/spreadsheets/d/1smhNZ3NaAmW908Cxw7gFauSwezHILdukt2IInfMi7bM/edit">
+                                RECORD JT IP CESSNA SERIES</option>
+                        </select>
+                    </a></li>
+                <li><a>
+                        <select class="form-select form-select-sm"
+                            onChange="document.location.href=this.options[this.selectedIndex].value;">
+                            <Option value="" disabled selected hidden class="form-control"> DAFTAR KOMPONEN TCI
+                            </Option>
+                            <option value=""> AIRFRAME</option>
+                            <option value=""> ENGINE</option>
+                            <option value=""> PROPELLER</option>
+                            <option value=""> STARTER GENEERATOR</option>
+                            <option value=""> ENGINE</option>
+                            <option value=""> ENGINE</option>
+                            <option value=""> ENGINE</option>
+                            <option value=""> ENGINE</option>
+                        </select>
+                    </a>
+                </li>
+                <li><a>
+                        <select class="form-select form-select-sm"
+                            onChange="document.location.href=this.options[this.selectedIndex].value;">
+                            <Option value="" disabled selected hidden class="form-control"> TROUBLE PESAWAT </Option>
+                            <option value="dataOilChip.html"> RIWAYAT OIL CHIP</option>
+                            <option href="oilChip.html">TROUBLE HARIAN</option>
+                        </select>
+                    </a></li>
+                <li><a href="formLogin1.html">LOGOUT</a></li>
+        </ul>
         </div>
-    </nav>
+
+        <div style="margin-left:25%; padding:1px 16px;height:1000px;">
+            <h3 style="align-items: center;">INPUT JAM TERBANG</h3>
+            <h3 id="tanggal">TANGGAL</h3>
+
+            <script>
+                var tanggalan = new Date();
+                document.getElementById('tanggal').innerHTML = "Tanggal" + " " + tanggalan.getDate() + "- " + (tanggalan.getMonth() + 1) + "- " + tanggalan.getFullYear();
+                console.log(tanggalan)
+
+
+            </script>
+            <!-- <img src="logo101.png" class="logo101 animate__animated animate__fadeInDown"> -->
+            <nav>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="welcome"> PILIH BULAN DAN TANGGAL </h4>
+                        <input type="date" class="btn btn-primary" id="datepicker" placeholder="BULAN/TANGGAL"></button>
+                        <button type="button" class="btn btn-primary" id="btn3" onclick="btnMulaiEdit()">Mulai
+                            Edit</button>
+                        <button type="button" class="btn btn-primary" id="btn4" onclick="btnKembali()">Kembali</button>
+
+                    </div>
+                </div>
+            </nav>
 
 
 
-    <!-- <style>
+            <!-- <style>
         .logo101 {
             align-items: center;
             margin-left: 35%;
@@ -138,62 +240,62 @@
         
     </style> -->
 
-    <script>
+            <script>
 
-        let KEMBALI = document.getElementsByClassName('KEMBALI');
-        let EDIT = document.getElementById('btn3');
-        let TANGGAL = document.getElementById('btn1');
+                let KEMBALI = document.getElementsByClassName('KEMBALI');
+                let EDIT = document.getElementById('btn3');
+                let TANGGAL = document.getElementById('btn1');
 
 
-        function btnKembali() {
-            console.log('aku di klik');
-            window.location.replace("index1.html");
-        }
-        function btnMulaiEdit() {
-            var date = new Date(document.getElementById("datepicker").value);
+                function btnKembali() {
+                    console.log('aku di klik');
+                    window.location.replace("index1.html");
+                }
+                function btnMulaiEdit() {
+                    var date = new Date(document.getElementById("datepicker").value);
 
-            if (date.getFullYear() == 2024 && date.getMonth() == 0) {
-                window.location.replace('januariGrob2024.html')
-            }
-            else if (date.getFullYear() == 2024 && date.getMonth() == 1) {
-                window.location.replace('2.FEBRUARI/index.html')
-            }
-            else if (date.getFullYear() == 2024 && date.getMonth() == 2) {
-                window.location.replace('/3.MARET/index.html')
-            }
-            else if (date.getFullYear() == 2024 && date.getMonth() == 3) {
-                window.location.replace('/4.APRIL/index.html')
-            }
-            else if (date.getFullYear() == 2024 && date.getMonth() == 4) {
-                window.location.replace('meiGrob2024./2.FEBRUARI/februariGrob2024.html')
-            }
-            else if (date.getFullYear() == 2024 && date.getMonth() == 5) {
-                window.location.replace('juniGrob2024./2.FEBRUARI/februariGrob2024.html')
-            }
-            else if (date.getFullYear() == 2024 && date.getMonth() == 6) {
-                window.location.replace('/2.FEBRUARI/februariGrob2024.html.html')
-            }
-            else if (date.getFullYear() == 2024 && date.getMonth() == 7) {
-                window.location.replace('/2.FEBRUARI/februariGrob2024.html.html')
-            }
-            else if (date.getFullYear() == 2024 && date.getMonth() == 8) {
-                window.location.replace('/2.FEBRUARI/februariGrob2024.html.html')
-            }
-            else if (date.getFullYear() == 2024 && date.getMonth() == 9) {
-                window.location.replace('/2.FEBRUARI/februariGrob2024.html.html')
-            }
-            else if (date.getFullYear() == 2024 && date.getMonth() == 10) {
-                window.location.replace('/2.FEBRUARI/februariGrob2024.html.html')
-            }
-            else if (date.getFullYear() == 2024 && date.getMonth() == 11) {
-                window.location.replace('/2.FEBRUARI/februariGrob2024.html.html')
-            }
-            else {
-                alert('duhhhhh.....');
-            }
-        }
+                    if (date.getFullYear() == 2024 && date.getMonth() == 0) {
+                        window.location.replace('januariGrob2024.html')
+                    }
+                    else if (date.getFullYear() == 2024 && date.getMonth() == 1) {
+                        window.location.replace('2.FEBRUARI/index.html')
+                    }
+                    else if (date.getFullYear() == 2024 && date.getMonth() == 2) {
+                        window.location.replace('/3.MARET/index.html')
+                    }
+                    else if (date.getFullYear() == 2024 && date.getMonth() == 3) {
+                        window.location.replace('/4.APRIL/index.html')
+                    }
+                    else if (date.getFullYear() == 2024 && date.getMonth() == 4) {
+                        window.location.replace('meiGrob2024./2.FEBRUARI/februariGrob2024.html')
+                    }
+                    else if (date.getFullYear() == 2024 && date.getMonth() == 5) {
+                        window.location.replace('juniGrob2024./2.FEBRUARI/februariGrob2024.html')
+                    }
+                    else if (date.getFullYear() == 2024 && date.getMonth() == 6) {
+                        window.location.replace('/2.FEBRUARI/februariGrob2024.html.html')
+                    }
+                    else if (date.getFullYear() == 2024 && date.getMonth() == 7) {
+                        window.location.replace('/2.FEBRUARI/februariGrob2024.html.html')
+                    }
+                    else if (date.getFullYear() == 2024 && date.getMonth() == 8) {
+                        window.location.replace('/2.FEBRUARI/februariGrob2024.html.html')
+                    }
+                    else if (date.getFullYear() == 2024 && date.getMonth() == 9) {
+                        window.location.replace('/2.FEBRUARI/februariGrob2024.html.html')
+                    }
+                    else if (date.getFullYear() == 2024 && date.getMonth() == 10) {
+                        window.location.replace('/2.FEBRUARI/februariGrob2024.html.html')
+                    }
+                    else if (date.getFullYear() == 2024 && date.getMonth() == 11) {
+                        window.location.replace('/2.FEBRUARI/februariGrob2024.html.html')
+                    }
+                    else {
+                        alert('duhhhhh.....');
+                    }
+                }
 
-    </script>
-</body>
+            </script>
+    </body>
 
 </html>

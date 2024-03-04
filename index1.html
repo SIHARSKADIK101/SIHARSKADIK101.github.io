@@ -9,13 +9,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-        <link href="formLogin.html">
-        <link rel="formLogin.html" href="formLogin.html">
-        <meta name="Description" content="Enter your description here" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-        <title>Februari</title>
-        <link src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"/>
+    <link href="formLogin.html">
+    <link rel="formLogin.html" href="formLogin.html">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <title>Februari</title>
+    <link src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" />
     <title>Document</title>
 
 </head>
@@ -60,33 +61,54 @@
     <body>
 
         <ul>
-            <img id="logo" src="logo101.png"  width="70px" aliign="text-center"><br>
-            <a id="welcome">SELAMAT DATANG.... </a> 
+            <img id="logo" src="logo101.png" width="70px" aliign="text-center"><br>
+            <a id="welcome">SELAMAT DATANG.... </a>
             <script>
                 const username = localStorage.getItem('username');
                 document.getElementById('welcome').innerHTML = "Selamat Datang" + " " + username;
                 console.log(username);
-                
+
             </script>
             <BR></BR>
             <li><a class="active" href="#home">MENU</a></li>
             <li><a href="pilihTanggal.html">INPUT JAM TERBANG</a></li>
             <li><a href="keispanPesawat.html">KESIAPAN PESAWAT</a></li>
             <li><a>
-                <select onChange="document.location.href=this.options[this.selectedIndex].value;">
-                    <Option value="" disabled selected hidden class="form-control"> RECORD JT IP </Option>
-                    <option value="https://docs.google.com/spreadsheets/d/1Qgc2r_VSOX4eLJWc8PuEXd8EgBdW7963rDj5IKP-PGs/edit"> RECORD JT IP GROB</option>
-                    <option value="https://docs.google.com/spreadsheets/d/1smhNZ3NaAmW908Cxw7gFauSwezHILdukt2IInfMi7bM/edit"> RECORD JT IP CESSNA SERIES</option>
-                </select>
-            </a></li>
-            <li><a href="#about">DAFTAR KOMPONEN TCI</a></li>
+                    <select class="form-select form-select-sm "
+                        onChange="document.location.href=this.options[this.selectedIndex].value;">
+                        <Option value="" disabled selected hidden class="form-control"> RECORD JT IP </Option>
+                        <option
+                            value="https://docs.google.com/spreadsheets/d/1Qgc2r_VSOX4eLJWc8PuEXd8EgBdW7963rDj5IKP-PGs/edit">
+                            RECORD JT IP GROB</option>
+                        <option
+                            value="https://docs.google.com/spreadsheets/d/1smhNZ3NaAmW908Cxw7gFauSwezHILdukt2IInfMi7bM/edit">
+                            RECORD JT IP CESSNA SERIES</option>
+                    </select>
+                </a></li>
             <li><a>
-                <select onChange="document.location.href=this.options[this.selectedIndex].value;">
-                    <Option value="" disabled selected hidden class="form-control"> TROUBLE PESAWAT </Option>
-                    <option value="https://docs.google.com/spreadsheets/d/1vmqz5JMfcPjrUDG9PVwNwfIXUU_z-wJ-38drDZu7_QE/edit#gid=0"> RIWAYAT OIL CHIP</option>
-                    <option href="oilChip.html">TROUBLE HARIAN</option>
-                </select>
-            </a></li>
+                    <select class="form-select form-select-sm"
+                        onChange="document.location.href=this.options[this.selectedIndex].value;">
+                        <Option value="" disabled selected hidden class="form-control"> DAFTAR KOMPONEN TCI </Option>
+                        <option value=""> AIRFRAME</option>
+                        <option value=""> ENGINE</option>
+                        <option value=""> PROPELLER</option>
+                        <option value=""> STARTER GENEERATOR</option>
+                        <option value=""> ENGINE</option>
+                        <option value=""> ENGINE</option>
+                        <option value=""> ENGINE</option>
+                        <option value=""> ENGINE</option>
+                    </select>
+                </a>
+            </li>
+
+            <li><a>
+                    <select class="form-select form-select-sm"
+                        onChange="document.location.href=this.options[this.selectedIndex].value;">
+                        <Option value="" disabled selected hidden class="form-control"> TROUBLE PESAWAT </Option>
+                        <option value="dataOilChip.html"> RIWAYAT OIL CHIP</option>
+                        <option href="oilChip.html">TROUBLE HARIAN</option>
+                    </select>
+                </a></li>
             <li><a href="formLogin1.html">LOGOUT</a></li>
         </ul>
 
@@ -99,13 +121,6 @@
                 <div class="card-body">
                     <div class="card" style="width: 18rem;">
                         <img src="logo101.png" class="card-img-top" width="30%">
-                        <div class= "card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                        </div>
-                    </div> <br>
-                    <div class="card" style="width: 18rem;">
-                        <img src="logo101.png" class="card-img-top" width="70px">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk
                                 of the card's content.</p>
@@ -113,6 +128,7 @@
                     </div>
                 </div>
             </div>
+        </div>
 
 
 

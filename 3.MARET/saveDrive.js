@@ -15,7 +15,7 @@ function kirim(id) {
     const submit = document.getElementById("submit");
 
     var status = document.getElementById("statusUpload-")
-    const scriptURL = "https://script.google.com/macros/s/AKfycbz-jZTUZgoaHzT8-LI-iYEmtJWVrG3xICQKqCdHW_BEDusfeWcHaJReqSK8A56-D0M0/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwYgeloc4WuVDd8FeqLi7gaxUIP82gd49jwUrWD7h4kxURqBqQJu_VDlbYmjN5yJEFS/exec";
     const form = document.forms["formUpload-" + id];
     contactList = JSON.parse(localStorage.getItem('listItem')) ?? []
 
